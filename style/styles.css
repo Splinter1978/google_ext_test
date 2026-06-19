@@ -1,0 +1,16 @@
+ body { 
+  max-width: 800px; /* Тепер сторінка буде широкою та зручною */
+  margin: 50px auto; /* Центруємо контент на екрані */
+  font-family: Arial, sans-serif; 
+  padding: 20px; 
+  background-color: #f8f9fa;
+}
+.chat-box { 
+  height: 350px; /* Робимо вікно чату значно вищим */
+  overflow-y: auto; 
+  background: white; 
+  padding: 15px; 
+  margin: 15px 0; 
+  border-radius: 8px; 
+  border: 1px solid #dadce0;
+}
