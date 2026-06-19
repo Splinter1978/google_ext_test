@@ -5,10 +5,13 @@
   "description": "Пошук та ШІ-помічник на базі вбудованого Gemini Nano",
   "permissions": [
     "identity",
-    "storage"
+    "storage",
+    "tabs"
   ],
+  "background": {
+    "service_worker": "background.js"
+  },
   "action": {
-    "default_popup": "popup.html",
     "default_icon": "icon.png"
   },
   "oauth2": {
