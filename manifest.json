@@ -1,21 +1,27 @@
 {
   "manifest_version": 3,
-  "name": "AI Search Assistant",
-  "version": "1.0",
-  "description": "Пошук та ШІ-помічник на базі вбудованого Gemini Nano",
+  "name": "AI Assistant (Monica Pro Style)",
+  "version": "1.2",
+  "description": "Сайдбар ШІ з контекстним меню та швидким виділенням тексту",
   "permissions": [
-    "identity",
-    "storage",
-    "tabs"
+    "sidePanel",
+    "contextMenus",
+    "activeTab",
+    "storage"
   ],
   "background": {
     "service_worker": "background.js"
   },
-  "action": {
-    "default_icon": "icon.png"
+  "side_panel": {
+    "default_path": "index.html"
   },
-  "oauth2": {
-    "client_id": "ТВІЙ_GOOGLE_CLIENT_ID.apps.googleusercontent.com",
-    "scopes": ["https://www.googleapis.com/auth/userinfo.email", "https://www.googleapis.com/auth/userinfo.profile"]
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_title": "Відкрити асистента"
   }
 }

@@ -75,3 +75,21 @@ document.getElementById('aiBtn').addEventListener('click', async () => {
   
   chatBox.scrollTop = chatBox.scrollHeight;
 });
+
+// Слухаємо повідомлення від фонового скрипту (background.js)
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  if (message.action === "insertPrompt" && message.text) {
+    const aiInp = document.getElementById('aiInp');
+    const botSelector = document.getElementById('botSelector');
+    
+    if (aiInp) {
+      // Формуємо гарний промпт для ШІ. 
+      // Можна також автоматично перемикати роль бота, якщо потрібно
+      aiInp.value = `Проаналізуй або поясни цей фрагмент тексту:\n"${message.text}"`;
+      
+      // Автоматично тицяємо на кнопку "Запитати", щоб користувач не робив зайвих кліків!
+      const aiBtn = document.getElementById('aiBtn');
+      if (aiBtn) aiBtn.click();
+    }
+  }
+});
