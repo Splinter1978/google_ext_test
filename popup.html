@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+    <title>AI Search Assistant</title>
+  <style>
+    body { width: 380px; font-family: Arial, sans-serif; padding: 15px; margin: 0; }
+    .hidden { display: none; }
+    .btn { width: 100%; padding: 10px; margin: 5px 0; cursor: pointer; background: #1a73e8; color: white; border: none; border-radius: 4px; }
+    .chat-box { height: 200px; overflow-y: auto; background: #f1f3f4; padding: 10px; margin-top: 10px; border-radius: 4px; }
+    input { width: 100%; padding: 8px; box-sizing: border-box; margin-bottom: 5px; }
+  </style>
+</head>
+<body>
+
+  <div id="authBlock">
+    <button class="btn" id="loginBtn">Увійти через Google Account</button>
+  </div>
+
+  <div id="mainBlock" class="hidden">
+    <div id="userInfo"></div>
+    <hr>
+    
+    <h4>Пошук Гугл</h4>
+    <input type="text" id="searchInp" placeholder="Що шукаємо?">
+    <button class="btn" id="searchWebBtn" style="background:#34a853">Шукати в Інтернеті</button>
+    <button class="btn" id="searchSiteBtn" style="background:#fbbc05">Шукати на нашому сайті</button>
+    <hr>
+
+    <h4>Вбудований ШІ Помічник</h4>
+    <select id="botSelector">
+      <option value="Пряма відповідь без прикрас.">Стандартний 🧑‍💼</option>
+      <option value="Ти — пірат. Говори як пірат, використовуй морський сленг.">Пірат 🏴‍☠️</option>
+    </select>
+    <div class="chat-box" id="chatBox">Вбудований Gemini Nano готовий...</div>
+    <input type="text" id="aiInp" placeholder="Запитай ШІ...">
+    <button class="btn" id="aiBtn">Запитати</button>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
